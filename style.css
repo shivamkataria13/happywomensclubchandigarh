@@ -28,6 +28,10 @@ body{
     overflow: hidden;
 }
 
+button{
+    cursor: pointer;
+}
+
 
 
 
@@ -65,7 +69,7 @@ header{
 }
 
 
-.navBtn:after{
+/* .navBtn:after{
     content: "";
     background: linear-gradient(180deg, #ff0099fd 0%, #f856b7 100%);
     border-radius: 50%;
@@ -82,7 +86,7 @@ header{
     transform: scale(0);
     transform-origin: right;
     transition: transform .45s ease-in;
-}
+} */
 
 .navBtn[aria-expanded = 'true']::after{
     transform: scale(1);
@@ -160,7 +164,7 @@ header .navbar{
     
     
     padding: 7.5rem 2rem;
-    background-color: #0144c93e;
+    background-color: #ffffff9a;
     backdrop-filter: blur(1rem);
     
     transition: all .4s ease-in-out;
@@ -456,6 +460,7 @@ button.joinUs:hover{
     }
 
 }
+
 
 
 
