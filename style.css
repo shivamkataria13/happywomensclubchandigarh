@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400&display=swap');
 
 :root{
     --oleo: 'Oleo Script', sans-serif;
     --barlow: 'Barlow Condensed', sans-serif;
-    --patrick: 'Patrick Hand', cursive;
+    --urbanist: 'Urbanist', sans-serif;
 
     --cream-white: #FAF7EF;
     --pinky-white: #EEE9F2;
-    --grey: #c8c8c8c8;
+    --grey: rgba(0, 0, 0, 0.50);
 
 }
 
@@ -29,6 +28,7 @@ img, video{
 body{
     font-family: var(--barlow);
     overflow-x: hidden;
+    transition: all .13s linear;
 }
 
 button{
@@ -485,6 +485,9 @@ button.joinUs:hover{
     align-items: center;
     justify-content: center;
     gap: 1rem;
+
+    text-align: center;
+
 }
 
 .introPara img{
@@ -493,12 +496,13 @@ button.joinUs:hover{
 }
 
 .secondaryHeading{
-    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     font-family: var(--oleo);
 }
 
 .introPara p{
-    font-family: var(--patrick);
+    font-family: var(--urbanist);
+    font-weight: 300;
     font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 }
 
@@ -552,3 +556,105 @@ img.waves{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about{
+    margin-top: -.3rem;
+    padding: 1.3rem;
+    background-color: var(--pinky-white);
+}
+
+.aboutText1{
+    margin-top: 2.6rem;
+}
+
+.aboutText{
+    margin-bottom: 2.6rem;
+    /* text-align: center; */
+}
+
+.aboutText h2{
+    font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+    font-family: var(--oleo);
+    margin-bottom: .6rem;
+}
+
+.aboutText p{
+    font-size: clamp(1.2rem, 2.6vw, 1.45rem);
+    font-family: var(--urbanist);
+
+    color: var(--grey);
+}
+
+
+.aboutEnding h2{
+    padding: 3.3rem 1.3rem 9rem;
+
+
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    font-family: var(--oleo);
+    color: var(--grey);
+
+    opacity: 75%;
+    text-align: center;
+}
+
+
+
+
+@media (min-width:1000px) {
+
+    .about{
+        padding-inline: 4rem;
+    }
+    
+    .aboutText{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+
+        gap: 3rem;
+
+    }
+
+    .aboutText2 h2{
+        grid-column: 2;
+        grid-row: span 2;
+    }
+
+}
+
+@media (min-width:1150px) {
+
+    .aboutEnding h2{
+        padding: 3.3rem 16rem 11rem;   
+    }
+
+    .aboutText{
+        gap: 6rem;
+    }
+
+}
+@media (min-width:1200px) {
+
+    .about{
+        padding-inline: 6rem;
+    }
+
+    .aboutEnding h2{
+        padding-top: 5rem;
+    }
+
+}
