@@ -8,7 +8,8 @@
     --urbanist: 'Urbanist', sans-serif;
 
     --cream-white: #FAF7EF;
-    --pinky-white: #EEE9F2;
+    --pinky-white: #eae0f3;
+    --blue: #003447;
     --grey: rgba(0, 0, 0, 0.50);
 
 }
@@ -39,6 +40,7 @@ button{
 
 
 header{
+
     padding: 1rem;
     transition: all .3s ease-in-out;
     color: white;
@@ -142,12 +144,12 @@ header .navbar{
     gap: 2rem;
     
     top: 0%;
-    right: -78%;
+    right: -85%;
 
     /* opacity: 0; */
     
     height: 100vh;
-    width: 78%;
+    width: 85%;
     
     
     padding: 7.5rem 2rem;
@@ -198,7 +200,7 @@ header .navbar li{
     font-size: 1.3rem;
 }
 header .navbar li:hover{
-    color: #0144c9;
+    color: var(--blue);
     transform: scale(1.03);
 }
 
@@ -218,7 +220,7 @@ header .navbar li:hover{
     max-width: 2.6rem;
 
     padding: .3rem;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50%;
 }
 
@@ -477,7 +479,7 @@ button.joinUs:hover{
 .introPara{
     padding: 3rem 1.3rem 6rem 1.3rem;
 
-    background-color: #003447;
+    background-color: var(--blue);
     color: white;
 
     display: flex;
@@ -517,6 +519,7 @@ img.waves{
     .introPara{
         text-align: center;
         padding: 4rem 6rem;
+
 
         display: grid;
         grid-template-columns: 16% 1fr;
@@ -655,6 +658,304 @@ img.waves{
 
     .aboutEnding h2{
         padding-top: 5rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer{
+    background-color: var(--pinky-white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    
+    padding: 1.3rem;
+
+}
+
+footer button.contactUs{
+    margin-top: 1rem;
+}
+
+
+@media (min-width:700px) {
+    
+    footer{
+        flex-direction: row;
+
+        gap: 4rem;
+
+        padding: 3rem;
+    }
+
+    footer button.contactUs{
+        margin-top: 0;
+    }
+    
+    
+    footer p{
+        grid-row: span 2;
+    }
+
+}
+
+
+@media (min-width:1000px) {
+
+    footer{
+        gap: 6rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #members page */
+
+.members{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.3rem;
+    font-family: var(--oleo);
+
+}
+
+.members h2{
+    margin: 2rem 0 3rem;
+    font-size: clamp(2.3rem, 4vw, 3.1rem);
+}
+
+
+
+.members .member img{
+    max-width: 80vw;
+    object-fit: contain;
+}
+
+.member{
+    font-size: 1.6rem;
+    margin-bottom: 8rem;
+}
+
+
+
+
+
+
+@media (min-width:500px) {
+    
+    .members .member img{
+        max-width: 26rem;
+    }
+    
+}
+
+@media (min-width:800px) {
+
+    .member{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        gap: 3rem;
+
+        align-items: center;
+    }
+    
+    
+}
+
+
+@media (min-width:1000px){
+
+    .member{
+        margin-top: 3rem;
+        gap: 5rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OUR STORY PAGE */
+.ourStory{
+    color: var(--grey);
+    font-family: var(--oleo);
+
+}
+
+.storyParas{
+    padding: 1.3rem;
+}
+
+.ourStory h2{
+    color: black;
+
+    margin: 2rem 0 3rem;
+    font-size: clamp(2.3rem, 4vw, 3.1rem);
+}
+
+.ourStory p{
+    margin-bottom: 1rem;
+
+    font-size: clamp(1.3rem, 2.6vw, 1.5rem);
+}
+
+.ourStory .divider{
+    margin-top: 0;
+}
+
+.ourStory .storyLastPara{
+    background-color: var(--blue);
+    color: white;
+
+    padding: 5rem 1.3rem 1.3rem;
+
+    margin-top: -6rem;
+}
+
+
+
+
+
+@media (min-width:700px){
+
+    .ourStory .storyLastPara{
+        margin-top: -9rem;
+        padding: 7rem 1.3rem 2rem;
+    }
+
+}
+@media (min-width:1000px){
+
+    .storyParas{
+        padding: 1.3rem 13rem;
+    }
+
+    .ourStory .storyLastPara{
+        margin-top: -12rem;
+        padding: 9rem 13rem 3rem;
+    }
+
+}
+@media (min-width:1150px){
+
+    .ourStory .storyLastPara{
+        margin-top: -14rem;
+        padding: 10rem 13rem 3rem;
+    }
+
+}
+@media (min-width:1250px){
+
+    .storyParas{
+        padding: 1.3rem 19rem;
+    }
+
+    .ourStory .storyLastPara{
+        margin-top: -15rem;
+        padding: 9rem 19rem 3rem;
     }
 
 }
