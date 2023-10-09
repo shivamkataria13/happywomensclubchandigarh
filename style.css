@@ -8,7 +8,7 @@
     --urbanist: 'Urbanist', sans-serif;
 
     --cream-white: #FAF7EF;
-    --pinky-white: #eae0f3;
+    --pinky-white: #f0e9f6;
     --blue: #003447;
     --grey: rgba(0, 0, 0, 0.50);
 
@@ -218,10 +218,14 @@ header .navbar li:hover{
 
 .navbar-socials img{
     max-width: 2.6rem;
-
+    
     padding: .3rem;
     border: 2px solid black;
     border-radius: 50%;
+    transition: all .13s linear;
+}
+.navbar-socials img:hover{
+    border: transparent;
 }
 
 button.contactUs {
@@ -244,7 +248,6 @@ button.contactUs:hover{
     color: black;
     border: 1px solid black;
 }
-
 
 
 
@@ -321,7 +324,6 @@ button.contactUs:hover{
         font-size: 1rem;
         width: max-content;
 
-        /* text-align: center; */
     }
     
     .navbar-socials{
@@ -587,7 +589,7 @@ img.waves{
     /* text-align: center; */
 }
 
-.aboutText h2{
+.aboutText h3{
     font-size: clamp(1.5rem, 2.6vw, 2.3rem);
     font-family: var(--oleo);
     margin-bottom: .6rem;
@@ -601,7 +603,7 @@ img.waves{
 }
 
 
-.aboutEnding h2{
+.aboutEnding h3{
     padding: 3.3rem 1.3rem 9rem;
 
 
@@ -632,7 +634,7 @@ img.waves{
 
     }
 
-    .aboutText2 h2{
+    .aboutText2 h3{
         grid-column: 2;
         grid-row: span 2;
     }
@@ -641,7 +643,7 @@ img.waves{
 
 @media (min-width:1150px) {
 
-    .aboutEnding h2{
+    .aboutEnding h3{
         padding: 3.3rem 16rem 11rem;   
     }
 
@@ -656,11 +658,225 @@ img.waves{
         padding-inline: 6rem;
     }
 
-    .aboutEnding h2{
+    .aboutEnding h3{
         padding-top: 5rem;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LATEST EVENTS */
+.latestEvents, .testimonials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 1.3rem;
+
+    font-family: var(--oleo);
+}
+
+.latestEvents h2, .testimonials h2{
+    font-size: clamp(2.3rem, 6vw, 4.3rem);
+    margin: 3rem 0;
+}
+
+
+.event{
+    background-color: var(--pinky-white);
+    padding: 1.3rem;
+
+    text-align: center;
+
+    margin-bottom: 3rem;
+}
+
+.event img{
+    width: 100%;
+    max-width: 31rem;
+}
+
+.event h4{
+    padding: 1rem 0 0;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+}
+
+@media (min-width:1000px) {
+
+    .eventsCarousel{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 2rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TESTIMONIALS */
+
+.testimonials{
+    margin-bottom: 2rem;
+}
+.testimonials h2{
+    margin-bottom: 0;
+}
+
+.testimonialCarousel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 1rem;
+    
+    position: relative;
+    
+    height: 11rem;
+    width: 80vw;
+    max-width: 39rem;
+    
+    overflow: hidden;
+
+}
+
+.carousels{
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    
+    padding: 2rem .6rem;
+    width: 100%;
+    background-color: var(--pinky-white);
+    
+    border-radius: .3rem;
+    
+    text-align: center;
+    
+    height: auto;
+    width: 100%;
+    
+    position: absolute;
+    
+    top: 2rem;
+    transition:all .21s linear;
+}
+
+.carouselBtns{
+    margin-top: 2.1rem;
+}
+
+.nextCard, .prevCard{
+    padding: .6rem .65rem;
+    margin-left: 1rem;
+
+    border: transparent;
+    border-radius: 50%;
+    outline: transparent;
+
+    background-color: var(--grey);
+
+    transition: all .13s linear;
+}
+
+.nextCard img, .prevCard img{
+    max-width: 100%;
+    width: 1.3rem;
+}
+
+
+.nextCard:hover, .prevCard:hover{
+    background-color: black;
+}
+
+
+
+
+
+@media (min-width:1000px) {
+    
+    .testimonials {
+        margin-bottom: 6rem;
+    }
+
+    .testimonials h2{
+        margin-bottom: 3rem;
+    }
+
+    .carouselBtns{
+        margin-top: 2rem;
+    }
+
+    .nextCard, .prevCard{
+        padding: .75rem .86rem;
+    }
+
+    .nextCard img, .prevCard img{
+        width: 1.6rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -878,6 +1094,20 @@ footer button.contactUs{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* OUR STORY PAGE */
 .ourStory{
     color: var(--grey);
@@ -899,7 +1129,7 @@ footer button.contactUs{
 .ourStory p{
     margin-bottom: 1rem;
 
-    font-size: clamp(1.3rem, 2.6vw, 1.5rem);
+    font-size: clamp(1.3rem, 2.9vw, 1.6rem);
 }
 
 .ourStory .divider{

@@ -35,3 +35,53 @@ navLinks.forEach((navLink)=>{
         navbar.classList.remove('active')
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+// testimonials carousel
+const carousels = document.querySelectorAll(".carousels")
+console.log(carousels)
+
+var counter = 0;
+carousels.forEach((carousel, index)=>{
+        carousel.style.left = `${index*100}%`
+    }
+)
+
+const prevCard = () => {
+    if (counter == 0) {
+        counter = carousels.length - 1;
+        slideCarousel();
+    } 
+    else {
+        counter--;
+        slideCarousel();
+    }
+}
+
+
+const nextCard = () => {
+    if (counter == carousels.length - 1) {
+        counter = 0;
+        slideCarousel();
+    } else {
+        counter++;
+        slideCarousel();
+    }
+}
+
+
+const slideCarousel = () => {
+    carousels.forEach((carousel)=>{
+        carousel.style.transform = `translateX(-${counter*100}%)`
+    })
+}
