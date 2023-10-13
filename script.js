@@ -49,7 +49,6 @@ navLinks.forEach((navLink)=>{
 
 // testimonials carousel
 const carousels = document.querySelectorAll(".carousels")
-console.log(carousels)
 
 var counter = 0;
 carousels.forEach((carousel, index)=>{
