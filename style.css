@@ -52,9 +52,7 @@ header{
     background-color: var(--pinky-white);
     backdrop-filter: blur(1rem);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
@@ -152,17 +150,16 @@ header .logo{
 }
 
 header .navbar{
-    display: none;
-    opacity: 0;
-
-    position: relative;
+    position: absolute;
     gap: 2rem;
     
+    top: 0%;
+    right: -85%;
 
     /* opacity: 0; */
     
     height: 100vh;
-    width: 100%;
+    width: 85%;
     
     
     padding: 7.5rem 2rem;
@@ -171,22 +168,17 @@ header .navbar{
     
     transition: all .4s ease-in-out;
 
-
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 
     z-index: 999;
 
-    transition: opactiy .16s linear;
 }
 
 header .logo-nav{
     margin: -6rem 0 0 0;
     font-size: .75rem;
-}
-
-header .logo-main{
-    grid-column: 2;
-    grid-row: 1;
 }
 
 .navbar a{
@@ -205,8 +197,8 @@ header .logo-main{
 
 
 header .navbar.active{
-    display: block;
-    opacity: 1;
+    right: 0;
+
 }
 
 
