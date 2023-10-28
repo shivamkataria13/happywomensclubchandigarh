@@ -189,10 +189,9 @@ header .navbar{
 }
 
 
-@supports (backdrop-filter: blur(1rem)){
+@supports (backdrop-filter: blur()){
 
     header .navbar{
-        /* background-color: #f0e9f6a8; */
         background: rgb(240,233,246);
         background: linear-gradient(180deg, rgba(240,233,246,1) 0%, rgba(240,233,246,0.31) 100%); 
         backdrop-filter: blur(1rem);
