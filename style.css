@@ -35,6 +35,8 @@ body{
 
     display: flex;
     flex-direction: column;
+
+    visibility: hidden;
 }
 
 button{
@@ -49,12 +51,12 @@ button{
 
 
 
-/* .openingPage{
+.openingPage{
     position: absolute;
     height: 100%;
     width: 100%;
 
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: 10000;
 
     display: flex;
@@ -67,24 +69,26 @@ button{
 .openingPageText{
     text-align: center;
 
+    font-size: clamp(2.6rem, 4vw, 3.6rem) !important;
+
     height: auto;
-    max-width: 33rem;
-    
-    text-shadow: 1px 1px 2.1rem black;
+    max-width: 41rem;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    text-shadow: 2px 2px 1.6rem black;
     color: white;
+
+    padding: 1rem;
     
     border-radius: 2.3rem;
+
 }
 
-.openingPageText::before{
-    content: "Why should Boys have all the fun?";
-
-    color: transparent;
-    -webkit-text-stroke: 1px black;
-
-    position: relative;
-    top: -3rem;
+.openingPageText .word{
+    transform: translateY(13px);
+    opacity: 0;
 }
+
 
 
 
@@ -92,11 +96,22 @@ button{
 @supports (backdrop-filter: blur()){
 
     .openingPage{
-        background: linear-gradient(180deg, rgba(240, 233, 246, 0.901) 0%, rgba(240, 233, 246, 0.205) 100%); 
-        backdrop-filter: blur(1rem);
+        background: linear-gradient(180deg, rgb(240, 233, 246) 0%, rgba(240, 233, 246, 0.344) 100%); 
+        backdrop-filter: blur(2.1rem);
+    }
+    
+    .openingPageText{
+        text-shadow: 2px 2px 1.6rem black;
+        color: white;
+        padding: none;
+
+        background-color: transparent;
     }
 
-} */
+}
+
+
+
 
 
 
@@ -473,7 +488,7 @@ button.contactUs:hover{
 
 
 .home{
-    background-image: url('assets/DSC_3052.JPG');
+    background-image: url('assets/DSC_3105.JPG');
     background-repeat: no-repeat;
     background-position: -14.5rem;
     background-size: cover;
@@ -556,7 +571,7 @@ button.joinUs:hover{
     
 
     .home{
-        background-position: 0rem;
+        background-position: 0rem; 
     }
 
 }

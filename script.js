@@ -1,4 +1,7 @@
-// nav button open and close
+function init(){
+
+
+    // nav button open and close
 const buttontwo = document.querySelector(".navBtn")
 
 
@@ -29,7 +32,6 @@ buttontwo.addEventListener('click', ()=>{
 
 
 const navLinks = document.querySelectorAll('.links')
-console.log(navLinks)
 navLinks.forEach((navLink)=>{
     navLink.addEventListener('click', ()=>{
         navbar.classList.remove('active')
@@ -90,7 +92,6 @@ const slideCarousel = () => {
 
 
 
-
 //Lenis 
 const lenis = new Lenis({
     duration: .75,
@@ -103,7 +104,6 @@ const lenis = new Lenis({
 })
 
 lenis.on('scroll', (e) => {
-  console.log(e)
 })
 
 function raf(time) {
@@ -124,157 +124,168 @@ requestAnimationFrame(raf)
 
 
 
-// GSAP
-gsap.registerPlugin('scrollTrigger');
 
-const tl = gsap.timeline({defaults: {ease: 'power4.in'}});
 
 
 
 
+    // GSAP
+    gsap.registerPlugin('scrollTrigger');
 
+    const tl = gsap.timeline({defaults: {ease: 'power4.in'}});
 
 
 
+    tl.from('body',{
+        autoAlpha:0,
+    })
 
-// HEADER
-tl.from( '.navBtn,  .logo-main',  {
-    duration: .6,
-    y:-9,
-    opacity:0,  
-    // delay:.9, 
-    stagger: .075,
-    ease:'power4.out',
-})
-tl.from( '.navbar-items a, .navbar-socials a', {
-    duration: .6,
-    scale:.85,
-    y:-9,
-    opacity:0, 
-    // delay:.9, 
-    stagger: .075,
-    ease:'power4.out',
-})
 
+    //OPENING PAGE
+    const openingPageText = new SplitType('.openingPageText h1', {types: 'words'})
 
+    // tl.from( '.openingPage',  {
+    //     duration: 1.9,
+    //     y:13,
+    //     opacity:0,  
+    //     stagger: .1,
+    //     ease:'power4.out',
+    // })
 
+    tl.to( '.openingPage  .openingPageText .word',  {
+        duration: 1.9,
+        y:0,
+        opacity:1,
+        stagger: .1,
+        ease:'power4.out',
+    })
 
+    gsap.to( '.openingPage',  {
+        duration: .9,
+        'background': 'none',
+        'backdrop-filter':'blur(0rem)',
+        delay:3,
+        ease:'power4.out',
+    })
 
-// INTROTEXT
-tl.from('.introText', {
-    duration: 1, 
-    y:-50, 
-    opacity:0, 
-    ease: 'bounce.inOut',
-})
+    tl.to( '.openingPageText',  {
+        duration: .9,
+        y:'4.5vh',
+        x:'-21vw',
+        scale:.7,
+        opacity:0,
+        ease:'power4.out',
+    })
+    tl.to( '.openingPage,  .openingPageText',  {
+        'display':'none'
+    })
 
 
 
 
 
-// INTROPARA
-gsap.from('.introParaItems', {
-    duration: 1.3,
-    y:26, 
-    opacity:0, 
-    stagger:.09,
-    'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)', 
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".introParaItems",
-        scroller: "body",
-        start: "top 75%",
-        end: "top 75%",
-        // markers:true
-    }
-})
 
 
 
+    // HEADER
+    tl.from( '.navBtn,  .logo-main',  {
+        autoAlpha:0,
+        duration: .6,
+        y:-9,
+        opacity:0,  
+        stagger: .075,
+        delay:-.69,
+        ease:'power4.out',
+    })
+    tl.from( '.navbar-items a, .navbar-socials a', {
+        autoAlpha:0,
+        duration: .6,
+        scale:.85,
+        y:-9,
+        opacity:0, 
+        stagger: .075,
+        delay:-.69,
+        ease:'power4.out',
+    })
 
 
 
-// ABOUT TEXT
-gsap.from('.aboutText', {
-    duration: 1.6,
-    opacity:0, 
-    stagger:.9,
-    // 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)', 
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".aboutText",
-        scroller: "body",
-        start: "top 55%",
-        end: "top 55%",
-    }
-})
 
 
+    // INTROTEXT
+    gsap.from('.introText', {
+        duration: 1, 
+        y:-50, 
+        opacity:0, 
+        delay:2.3,
+        ease: 'bounce.inOut',
+    })
 
 
-const splitTypes = document.querySelector('.aboutEnding h3')
-const text = new SplitType(splitTypes, {types: 'words'})
 
-gsap.from('.aboutEnding .word', {
-    duration: .75,
-    y:13,
-    opacity:0, 
-    stagger:.06,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".aboutEnding",
-        scroller: "body",
-        start: "top 55%",
-        end: "top 55%",
-    }
-})
 
 
+    // INTROPARA
+    gsap.from('.introParaItems', {
+        duration: 1.3,
+        y:26, 
+        opacity:0, 
+        stagger:.09,
+        'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)', 
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".introParaItems",
+            scroller: "body",
+            start: "top 75%",
+            end: "top 75%",
+            // markers:true
+        }
+    })
 
 
 
 
 
 
+    // ABOUT TEXT
+    gsap.from('.aboutText', {
+        duration: 1.6,
+        opacity:0, 
+        stagger:.9,
+        // 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)', 
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".aboutText",
+            scroller: "body",
+            start: "top 55%",
+            end: "top 55%",
+        }
+    })
 
 
 
 
+    const splitTypes = document.querySelector('.aboutEnding h3')
+    const text = new SplitType(splitTypes, {types: 'words'})
 
-// LATEST EVENTS
-gsap.from('.latestEvents .mainHeading', {
-    duration: 1,
-    y:31,
-    opacity:0, 
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".latestEvents .mainHeading",
-        scroller: "body",
-        start: "top 65%",
-        end: "top 65%",
-    }
-})
+    gsap.from('.aboutEnding .word', {
+        duration: .75,
+        y:13,
+        opacity:0, 
+        stagger:.06,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".aboutEnding",
+            scroller: "body",
+            start: "top 55%",
+            end: "top 55%",
+        }
+    })
 
 
-gsap.from('.latestEvents .event', {
-    duration: 1,
-    scale:0,
-    y:63,
-    opacity:0,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".latestEvents .event",
-        scroller: "body",
-        start: "top 80%",
-        end: "top 80%",
-        // markers:true
-    }
-})
 
 
 
@@ -286,55 +297,44 @@ gsap.from('.latestEvents .event', {
 
 
 
+    // LATEST EVENTS
+    gsap.from('.latestEvents .mainHeading', {
+        duration: 1,
+        y:31,
+        opacity:0, 
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".latestEvents .mainHeading",
+            scroller: "body",
+            start: "top 65%",
+            end: "top 65%",
+        }
+    })
 
 
+    gsap.from('.latestEvents .event', {
+        duration: 1,
+        scale:0,
+        y:63,
+        opacity:0,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".latestEvents .event",
+            scroller: "body",
+            start: "top 80%",
+            end: "top 80%",
+            // markers:true
+        }
+    })
 
-// TESTIMONIALS
-gsap.from('.testimonials .mainHeading', {
-    duration: 1.3,
-    y:-31,
-    opacity:0,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".testimonials .mainHeading",
-        scroller: "body",
-        start: "top 75%",
-        end: "top 75%",
-    }
-})
 
 
 
-gsap.from('.testimonials .testimonialCarousel', {
-    duration: 1.3,
-    scale:0,
-    opacity:0,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".testimonials .testimonialCarousel",
-        scroller: "body",
-        start: "top 80%",
-        end: "top 80%",
-    }
-})
 
 
 
-gsap.from('.testimonials .carouselBtns', {
-    duration: 1,
-    y:31,
-    opacity:0,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".testimonials .carouselBtns",
-        scroller: "body",
-        start: "top 80%",
-        end: "top 80%",
-    }
-})
 
 
 
@@ -342,31 +342,57 @@ gsap.from('.testimonials .carouselBtns', {
 
 
 
+    // TESTIMONIALS
+    gsap.from('.testimonials .mainHeading', {
+        duration: 1.3,
+        y:-31,
+        opacity:0,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".testimonials .mainHeading",
+            scroller: "body",
+            start: "top 75%",
+            end: "top 75%",
+        }
+    })
 
 
 
+    gsap.from('.testimonials .testimonialCarousel', {
+        duration: 1.3,
+        scale:0,
+        opacity:0,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".testimonials .testimonialCarousel",
+            scroller: "body",
+            start: "top 80%",
+            end: "top 80%",
+        }
+    })
 
 
 
+    gsap.from('.testimonials .carouselBtns', {
+        duration: 1,
+        y:31,
+        opacity:0,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".testimonials .carouselBtns",
+            scroller: "body",
+            start: "top 80%",
+            end: "top 80%",
+        }
+    })
 
 
 
 
-// footer animation
-gsap.from('footer', {
-    duration: 1, 
-    y:-13, 
-    opacity:0, 
-    ease:"back.in",  
 
-    scrollTrigger:{
-        trigger:"footer",
-        scroller: "body",
-        start: "top 90%",
-        end: "top 90%",
-        // markers:true
-    }
-})
 
 
 
@@ -379,7 +405,21 @@ gsap.from('footer', {
 
 
 
+    // footer animation
+    // gsap.from('footer a', {
+    //     duration: 1, 
+    //     y:-13, 
+    //     opacity:0, 
+    //     ease:"back.in",  
 
+    //     scrollTrigger:{
+    //         trigger:"footer",
+    //         scroller: "body",
+    //         start: "top 90%",
+    //         end: "top 90%",
+    //         // markers:true
+    //     }
+    // })
 
 
 
@@ -390,36 +430,9 @@ gsap.from('footer', {
 
 
 
-// MEMBERS PAGE
-gsap.from('.members h2', {
-    duration: 1, 
-    y:13, 
-    opacity:0, 
-    ease:"back.in",  
-})
-gsap.from('.founder img', {
-    duration: 1.3, 
-    // y:13, 
-    scale:0.9,
-    opacity:0, 
-    ease:"back.in",  
-})
 
 
-gsap.from('.memberInfo', {
-    duration: .8, 
-    y:-13, 
-    opacity:0, 
-    ease:"back.in",  
 
-    scrollTrigger:{
-        trigger:".memberInfo",
-        scroller: "body",
-        start: "top 85%",
-        end: "top 85%",
-        // markers:true
-    }
-})
 
 
 
@@ -430,191 +443,238 @@ gsap.from('.memberInfo', {
 
 
 
+    // MEMBERS PAGE
+    gsap.from('.members h2', {
+        duration: 1, 
+        y:13, 
+        opacity:0, 
+        ease:"back.in",  
+    })
+    gsap.from('.founder img', {
+        duration: 1.3, 
+        // y:13, 
+        scale:0.9,
+        opacity:0, 
+        ease:"back.in",  
+    })
 
 
+    gsap.from('.memberInfo', {
+        duration: .8, 
+        y:-13, 
+        opacity:0, 
+        ease:"back.in",  
 
+        scrollTrigger:{
+            trigger:".memberInfo",
+            scroller: "body",
+            start: "top 85%",
+            end: "top 85%",
+            // markers:true
+        }
+    })
 
 
 
 
 
-// OUR STORY PAGE
 
-const ourStoryPageHeading = new SplitType('.storyParas h2', {types: 'char'})
 
-gsap.from('.storyParas h2 .char', {
-    duration: 1,
-    x:-31,
-    opacity:0, 
-    stagger:.06,
-    delay:.8,
-    ease:'power4.out',
-})
 
 
 
 
 
-gsap.from('.storyParas p', {
 
-    duration: 1.3,
-    y:-31,
-    // x:13,
-    opacity:0, 
-    stagger:.6,
-    delay:1.3,
-    ease:'power4.out',
-})
 
 
 
 
 
+    // OUR STORY PAGE
 
-const ourStoryPage = new SplitType('.storyLastPara p', {types: 'words'})
+    const ourStoryPageHeading = new SplitType('.storyParas h2', {types: 'char'})
 
-gsap.from('.storyLastPara .word', {
-    duration: .6,
-    y:13,
-    // x:13,
-    opacity:0, 
-    stagger:.03,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".storyLastPara p",
-        scroller: "body",
-        start: "top 55%",
-        end: "top 55%",
-    }
-})
+    gsap.from('.storyParas h2 .char', {
+        duration: 1,
+        x:-31,
+        opacity:0, 
+        stagger:.06,
+        delay:.8,
+        ease:'power4.out',
+    })
 
 
 
 
 
+    gsap.from('.storyParas p', {
 
+        duration: 1.3,
+        y:-31,
+        // x:13,
+        opacity:0, 
+        stagger:.6,
+        delay:1.3,
+        ease:'power4.out',
+    })
 
 
 
 
 
 
+    const ourStoryPage = new SplitType('.storyLastPara p', {types: 'words'})
 
+    gsap.from('.storyLastPara .word', {
+        duration: 2.1,
+        y:13,
+        // x:13,
+        opacity:0, 
+        stagger:.01,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".storyLastPara p",
+            scroller: "body",
+            start: "top 55%",
+            end: "top 55%",
+        }
+    })
 
 
 
 
-// OUR EVENTS PAGE
 
 
-// events headings
-const ourEventsPage = new SplitType('.ourEvent h2', {types: 'word'})
 
-gsap.from('.ourEvent1 h2', {
-    duration: 1,
-    y:-26,
-    opacity:0, 
-    delay:1,
-    stagger:.06,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".ourEvent1 h2",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-    }
-})
-gsap.from('.ourEvent2 h2', {
-    duration: 1,
-    y:-26,
-    opacity:0, 
-    stagger:.06,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".ourEvent2 h2",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-    }
-})
-gsap.from('.ourEvent3 h2',{
-    duration: 1,
-    y:-26,
-    opacity:0, 
-    stagger:.06,
-    ease:'power4.out',
-    
-    scrollTrigger:{
-        trigger:".ourEvent3 h2",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-    }
-})
 
 
 
 
 
 
-// events img
-gsap.from('.ourEvent1 img', {
-    duration: 1,
-    y:26,
-    opacity:0, 
-    delay:1,
-    stagger:.09,
-    ease:'power4.out',
 
-    scrollTrigger:{
-        trigger:".ourEvent1 img",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-        // markers:true
-    }
-})
-gsap.from('.ourEvent2 img', {
-    duration: 1,
-    y:26,
-    opacity:0, 
-    stagger:.09,
-    ease:'power4.out',
 
-    scrollTrigger:{
-        trigger:".ourEvent2 img",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-        // markers:true
-    }
-})
-gsap.from('.ourEvent3 img', {
-    duration: 1,
-    y:26,
-    opacity:0, 
-    stagger:.09,
-    ease:'power4.out',
 
-    scrollTrigger:{
-        trigger:".ourEvent3 img",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 70%",
-        // markers:true
-    }
-})
 
+    // OUR EVENTS PAGE
 
 
+    // events headings
+    const ourEventsPage = new SplitType('.ourEvent h2', {types: 'word'})
 
+    gsap.from('.ourEvent1 h2', {
+        duration: 1,
+        y:-26,
+        opacity:0, 
+        delay:1,
+        stagger:.06,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".ourEvent1 h2",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+        }
+    })
+    gsap.from('.ourEvent2 h2', {
+        duration: 1,
+        y:-26,
+        opacity:0, 
+        stagger:.06,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".ourEvent2 h2",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+        }
+    })
+    gsap.from('.ourEvent3 h2',{
+        duration: 1,
+        y:-26,
+        opacity:0, 
+        stagger:.06,
+        ease:'power4.out',
+        
+        scrollTrigger:{
+            trigger:".ourEvent3 h2",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+        }
+    })
 
 
 
 
 
 
+    // events img
+    gsap.from('.ourEvent1 img', {
+        duration: 1,
+        y:26,
+        opacity:0, 
+        delay:1,
+        stagger:.09,
+        ease:'power4.out',
 
+        scrollTrigger:{
+            trigger:".ourEvent1 img",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+            // markers:true
+        }
+    })
+    gsap.from('.ourEvent2 img', {
+        duration: 1,
+        y:26,
+        opacity:0, 
+        stagger:.09,
+        ease:'power4.out',
+
+        scrollTrigger:{
+            trigger:".ourEvent2 img",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+            // markers:true
+        }
+    })
+    gsap.from('.ourEvent3 img', {
+        duration: 1,
+        y:26,
+        opacity:0, 
+        stagger:.09,
+        ease:'power4.out',
+
+        scrollTrigger:{
+            trigger:".ourEvent3 img",
+            scroller: "body",
+            start: "top 70%",
+            end: "top 70%",
+            // markers:true
+        }
+    })
+
+        
+
+    ScrollTrigger.refresh(true)
+
+
+
+
+}
+
+
+
+
+window.addEventListener('load',  function(event){
+  
+    init();
+
+});
