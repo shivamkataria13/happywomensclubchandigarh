@@ -44,6 +44,71 @@ button{
 
 
 
+
+
+
+
+
+/* .openingPage{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-color: #fff;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.3rem;
+}
+
+
+.openingPageText{
+    text-align: center;
+
+    height: auto;
+    max-width: 33rem;
+    
+    text-shadow: 1px 1px 2.1rem black;
+    color: white;
+    
+    border-radius: 2.3rem;
+}
+
+.openingPageText::before{
+    content: "Why should Boys have all the fun?";
+
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+
+    position: relative;
+    top: -3rem;
+}
+
+
+
+
+@supports (backdrop-filter: blur()){
+
+    .openingPage{
+        background: linear-gradient(180deg, rgba(240, 233, 246, 0.901) 0%, rgba(240, 233, 246, 0.205) 100%); 
+        backdrop-filter: blur(1rem);
+    }
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 header{
     padding: 1rem;
 
@@ -61,6 +126,8 @@ header{
 
     position: fixed;
     width: 100%;
+
+    z-index: 99;
 }
 
 .logo-main{
@@ -403,6 +470,8 @@ button.contactUs:hover{
 
 
 
+
+
 .home{
     background-image: url('assets/DSC_3052.JPG');
     background-repeat: no-repeat;
@@ -432,7 +501,6 @@ button.contactUs:hover{
     max-width: 33rem;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 2.3rem;
-
 }
 
 .introText p{
@@ -538,6 +606,10 @@ button.joinUs:hover{
 
     text-align: center;
 
+}
+
+.introParaItems{
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
 .introPara img{
@@ -1084,7 +1156,7 @@ footer button.contactUs{
 
 
 .members h2{
-    margin: 2rem 0 3rem;
+    margin: 3rem 0 2rem;
     font-size: clamp(2.3rem, 4vw, 3.1rem);
 }
 
@@ -1097,7 +1169,7 @@ footer button.contactUs{
 
 .member{
     font-size: 1.6rem;
-    margin-bottom: 8rem;
+    margin-bottom: 11rem;
 }
 
 
@@ -1106,7 +1178,7 @@ footer button.contactUs{
 
 
 @media (min-width:500px) {
-    
+
     .members .member img{
         max-width: 26rem;
     }
@@ -1136,7 +1208,7 @@ footer button.contactUs{
     }
 
     .member{
-        margin-top: 3rem;
+        margin-top: 1rem;
         gap: 5rem;
 
         padding-bottom: 3rem;
@@ -1224,11 +1296,17 @@ footer button.contactUs{
 
     padding: 5rem 1.3rem 3.6rem;
 
-    margin-top: -6rem;
+    margin-top: -5rem;
 }
 
 
 
+@media (min-width:500px){
+
+    .ourStory .storyLastPara{
+        margin-top: -6.9rem;
+    }
+}
 
 
 @media (min-width:700px){
@@ -1236,9 +1314,11 @@ footer button.contactUs{
     .ourStory .storyLastPara{
         margin-top: -9rem;
         padding: 7rem 1.3rem 6rem;
-    }
-
+    }    
+    
 }
+
+
 @media (min-width:1000px){
 
     .storyParas{
